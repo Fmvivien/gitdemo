@@ -10,7 +10,6 @@ import java.util.Scanner;
             System.out.println("=== Szorzótábla Minigame (0-10) ===");
             System.out.println("Érj el 5 helyes választ a gyémánt megszerzéséhez!\n");
 
-            // Addig fut a játék, amíg nincs meg az 5 helyes válasz
             while (helyesValaszokSzama < 5) {
                 int szam1 = random.nextInt(11);
                 int szam2 = random.nextInt(11);
@@ -18,15 +17,15 @@ import java.util.Scanner;
 
                 System.out.print((helyesValaszokSzama + 1) + ". sikeres feladat következik: " + szam1 + " * " + szam2 + " = ");
 
-                // Biztonságos beolvasás (csak számot fogad el)
+                // Beolvasás
                 while (!scanner.hasNextInt()) {
                     System.out.println("Kérlek, egy számot adj meg!");
                     System.out.print(szam1 + " * " + szam2 + " = ");
                     scanner.next();
                 }
-                int felhasznaloValasza = scanner.nextInt();
+                int valasz = scanner.nextInt();
 
-                if (felhasznaloValasza == helyesEredmeny) {
+                if (valasz == helyesEredmeny) {
                     helyesValaszokSzama++;
                     System.out.println("Helyes! Eddigi sikeres válaszok: " + helyesValaszokSzama + "/5\n");
                 } else {
@@ -36,13 +35,12 @@ import java.util.Scanner;
 
             // Gyémánt alakzat kirajzolása
             System.out.println("Gratulálok! Megvan az 5 helyes válasz! Íme a gyémántod:\n");
-            kirajzolGyemant(5);
+            Gyemant(5);
 
             scanner.close();
         }
 
-        // Metódus a gyémánt kirajzolásához
-        public static void kirajzolGyemant(int magassag) {
+        public static void Gyemant(int magassag) {
             // Felső rész
             for (int i = 1; i <= magassag; i++) {
                 for (int j = magassag; j > i; j--) {
