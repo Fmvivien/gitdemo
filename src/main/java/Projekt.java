@@ -20,7 +20,7 @@ public class Projekt {
         System.out.print("Hány évre szeretnéd lekötni a pénzed? (1-5 év): ");
         int year = scan.nextInt();
 
-        // kamatláb: 5% (0.05)
+        // kamatláb: 5%
         double kamatlab = 0.05;
 
         // 3. Ellenőrzés
